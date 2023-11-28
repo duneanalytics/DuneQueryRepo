@@ -1,0 +1,31 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Log directory structure
+        run: |
+          pwd
+          ls -R
+    
+      - name: pip requirements
+        run: pip install -r requirements.txt
+
+      - name: Run test script
+        run: python -u github_workflows/action.py
