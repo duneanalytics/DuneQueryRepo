@@ -1,4 +1,4 @@
-name: Python CI
+name: Update From Dune (Pull Queries)
 
 on:
   workflow_dispatch:

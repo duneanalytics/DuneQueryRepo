@@ -1,4 +1,4 @@
-name: Python CI
+name: Update to Dune (Push Queries)
 
 on:
   push:
