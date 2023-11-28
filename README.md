@@ -6,14 +6,14 @@ A template for creating repos to manage your Dune queries using the CRUD API. Th
 
 1. First, go to the dashboard you want to create a repo for (must be owned by you/your team). Click on the "github" icon in the top right to see your query ids.
 
-2. Copy and paste that list into the `queries.yml` file (or any list of query ids, doesn't have to be from a dashboard). 
+2. Copy and paste that list into the `queries.yml` file (or any list of query ids, doesn't have to be linked to a dashboard). 
 
 3. Install the python requirements and run the `pull_from_dune.py` script. You can input the following lines into a terminal/CLI:
     ```
     pip install -r requirements.txt
     python scripts/pull_from_dune.py
     ```
-    This will bring in your query ids into `query_{id}.sql` files within the `queries` folder. You can run `pull_from_dune.py` anytime you need to update your queries in this repo with edits from the Dune app.
+    This will bring in your query ids into `/query_{id}.sql` files within the `/queries` folder. You can run `pull_from_dune.py` anytime you need to update your queries in this repo with edits from the Dune app.
 
 4. Make any changes you need to directly in the repo, and any time you push a commit `push_to_dune.py` will run and save your changes into Dune directly. You can also run the script manually:
     ```
