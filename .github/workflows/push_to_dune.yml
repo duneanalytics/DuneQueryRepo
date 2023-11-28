@@ -1,4 +1,4 @@
-name: Update to Dune on Commit (Push Queries)
+name: Push to Dune on Commit
 
 on:
   push:
