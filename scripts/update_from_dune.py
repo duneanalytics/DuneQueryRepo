@@ -29,8 +29,7 @@ for id in query_ids:
     if os.path.exists(file_path):
         # Update existing file
         with open(file_path, 'r+', encoding='utf-8') as file:
-            content = file.read()
-            file.seek(0, 0)
+            file.truncate(0)  # Delete all file contents
             file.write(f'-- {query.base.name}\n-- https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
     else:
         # Create new file and directories if they don't exist
