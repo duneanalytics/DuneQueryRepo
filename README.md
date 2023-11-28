@@ -13,9 +13,9 @@ A template for creating repos to manage your Dune queries using the CRUD API. Th
     pip install -r requirements.txt
     python scripts/pull_from_dune.py
     ```
-    This will bring in your query ids into `query_{id}.sql` files within the `queries` folder. *You can run that same python script again anytime you need to update your work from Dune into this repo.*
+    This will bring in your query ids into `query_{id}.sql` files within the `queries` folder. You can run `pull_from_dune.py` anytime you need to update your queries in this repo with edits from the Dune app.
 
-4. Make any changes you need to directly in the repo, and any time you push a commit `push_to_dune.py` will run and save your changes into Dune directly. *You can also do this without waiting for a commit/github action by running the script manually:*
+4. Make any changes you need to directly in the repo, and any time you push a commit `push_to_dune.py` will run and save your changes into Dune directly. You can also run the script manually:
     ```
     python scripts/push_to_dune.py
     ```
