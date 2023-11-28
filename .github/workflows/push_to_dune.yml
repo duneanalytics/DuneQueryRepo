@@ -24,10 +24,7 @@ jobs:
       - name: pip requirements
         run: pip install -r requirements.txt
 
-      - name: Update all queries from Dune
+      - name: Update all queries from Dune, by overwriting queries with repo query text
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
-        run: python -u scripts/update_to_dune.py
-      
-      - name: Print name
-        run: echo "Hello ${{ secrets.ENV_TEST }}"
+        run: python -u scripts/push_to_dune.py
