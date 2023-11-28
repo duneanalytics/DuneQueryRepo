@@ -1,0 +1,33 @@
+name: Python CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Log directory structure
+        run: |
+          pwd
+          ls -R
+    
+      - name: pip requirements
+        run: pip install -r requirements.txt
+
+      - name: Update all queries from Dune
+        env:
+          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+        run: python -u github_workflows/update_to_dune.py
+      
+      - name: Print name
+        run: echo "Hello ${{ secrets.ENV_TEST }}"
+
+      
