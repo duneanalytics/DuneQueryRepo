@@ -28,4 +28,6 @@ jobs:
         run: python -u github_workflows/action.py
       
       - name: Print name
-        run: echo "Hello ${{ENV_TEST}}"
+        run: echo "Hello ${{ secrets.ENV_TEST }}"
+
+      
