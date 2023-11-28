@@ -1,7 +1,9 @@
-name: Update From Dune Manually (Pull Queries)
+name: Update to Dune on Commit (Push Queries)
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -25,6 +27,7 @@ jobs:
       - name: Update all queries from Dune
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
-        run: python -u scripts/update_to_dune.py
-
+        run: python -u github_workflows/update_to_dune.py
       
+      - name: Print name
+        run: echo "Hello ${{ secrets.ENV_TEST }}"
