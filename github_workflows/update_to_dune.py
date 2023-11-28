@@ -39,4 +39,4 @@ for id in query_ids:
         )
         
     else:
-        print('file not found, {}'.format(query_{query.base.query_id}.sql))
+        print('file not found, query_{}.sql'.format(query.base.query_id))
