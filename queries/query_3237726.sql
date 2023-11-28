@@ -1,3 +1,8 @@
+-- already part of a query repo
+-- query name: Aggregator by volume 📢
+-- query link: https://dune.com/queries/3237726
+
+
 WITH
   seven_day_volume AS (
     SELECT

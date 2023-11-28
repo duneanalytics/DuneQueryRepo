@@ -1,3 +1,8 @@
+-- already part of a query repo
+-- query name: Weekly DEX volume by chain
+-- query link: https://dune.com/queries/3237723
+
+
 SELECT
   blockchain,
   DATE_TRUNC('week', block_time),

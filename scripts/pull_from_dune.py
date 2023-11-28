@@ -33,11 +33,11 @@ for id in query_ids:
             if '-- already part of a query repo' in query.sql:
                 file.write(query.sql)
             else:
-                file.write(f'-- already part of a query repo\n --query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
+                file.write(f'-- already part of a query repo\n-- query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
     else:
         # Create new file and directories if they don't exist
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, 'w', encoding='utf-8') as file:
-            file.write(f'-- already part of a query repo\n --query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
+            file.write(f'-- already part of a query repo\n-- query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
             
 

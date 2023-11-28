@@ -1,3 +1,8 @@
+-- already part of a query repo
+-- query name: Weekly DEX volume
+-- query link: https://dune.com/queries/3237738
+
+
 SELECT
   project,
   DATE_TRUNC('week', block_time),

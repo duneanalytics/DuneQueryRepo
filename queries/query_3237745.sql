@@ -1,3 +1,8 @@
+-- already part of a query repo
+-- query name: EVM DEX Traders by Bucket
+-- query link: https://dune.com/queries/3237745
+
+
 with 
     all_traders as (
         SELECT 

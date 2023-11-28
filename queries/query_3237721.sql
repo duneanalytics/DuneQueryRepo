@@ -1,3 +1,8 @@
+-- already part of a query repo
+-- query name: DEX by volume 🏦
+-- query link: https://dune.com/queries/3237721
+
+
 WITH
   seven_day_volume AS (
     SELECT
