@@ -4,7 +4,7 @@ A template for creating repos to manage your Dune queries. The main flow I've cr
 
 ### Setup Your Repo
 
-1. Generate an API key from your Dune account and put that in both your `.env` file and github secrets (repo settings). You can create a key under team settings (https://dune.com/settings/teams/manage/{your_team_name}/api). *You must be on the premium plan for this repo to work.*
+1. Generate an API key from your Dune account and put that in both your `.env` file and github secrets (repo settings). You can create a key under your Dune team settings. *The key must be from a premium plan for this repo to work.*
 
 2. Then, go to the dashboard you want to create a repo for (must be owned by you/your team). Click on the "github" icon in the top right to see your query ids.
 
