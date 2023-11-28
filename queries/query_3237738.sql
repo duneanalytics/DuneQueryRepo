@@ -1,7 +1,3 @@
--- Weekly DEX volume
--- https://dune.com/queries/3237738
-
-
 SELECT
   project,
   DATE_TRUNC('week', block_time),

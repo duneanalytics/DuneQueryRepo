@@ -1,7 +1,3 @@
--- Aggregator by volume 📢
--- https://dune.com/queries/3237726
-
-
 WITH
   seven_day_volume AS (
     SELECT

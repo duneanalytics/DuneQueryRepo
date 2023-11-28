@@ -4,7 +4,8 @@ A template for creating repos to manage your Dune queries using the CRUD API.
 
 ### Setup
 
-1. First, go to the dashboard you want to create a repo for (must be owned by you/your team). Click on the "github" icon in the top right to get a popup which will display all your query ids for said dashboard. Or, just get the list queries you want to track in general.
+1. First, go to the dashboard you want to create a repo for (must be owned by you/your team). Click on the "github" icon in the top right to get a popup which will display all your query ids for said dashboard. 
+    - Alternatively, just get the list queries you want to track if you aren't doing this for a dashboard.
 
 2. Copy and paste that list into the `queries.yml` file. 
 

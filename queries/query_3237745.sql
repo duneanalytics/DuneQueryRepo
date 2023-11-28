@@ -1,7 +1,3 @@
--- EVM DEX Traders by Bucket
--- https://dune.com/queries/3237745
-
-
 with 
     all_traders as (
         SELECT 

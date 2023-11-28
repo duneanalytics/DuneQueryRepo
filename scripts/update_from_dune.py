@@ -28,13 +28,16 @@ for id in query_ids:
     file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', f'query_{query.base.query_id}.sql')
     if os.path.exists(file_path):
         # Update existing file
-        with open(file_path, 'r+', encoding='utf-8') as file:
-            file.truncate(0)  # Delete all file contents
-            file.write(f'-- {query.base.name}\n-- https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
+        with open(file_path, 'r+', encoding='utf-8') as file:   
+            #if "query repo:" is in the file, then don't add the text header again
+            if '-- already part of a query repo' in query.sql:
+                file.write(query.sql)
+            else:
+                file.write(f'-- already part of a query repo\n --query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
     else:
         # Create new file and directories if they don't exist
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, 'w', encoding='utf-8') as file:
-            file.write(f'-- {query.base.name}\n-- https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
+            file.write(f'-- already part of a query repo\n --query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
             
 

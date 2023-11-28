@@ -1,6 +1,3 @@
--- DEX by volume 🏦
--- https://dune.com/queries/3237721
-
 WITH
   seven_day_volume AS (
     SELECT
