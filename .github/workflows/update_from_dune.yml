@@ -1,4 +1,4 @@
-name: Update From Dune (Pull Queries, Manual Run)
+name: Update From Dune Manually (Pull Queries)
 
 on:
   workflow_dispatch:

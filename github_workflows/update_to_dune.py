@@ -33,7 +33,7 @@ for id in query_ids:
 
         # Update existing file
         dune.update_query(
-            query_id, 
+            query.base.query_id, 
             # All parameters below are optional
             query_sql=text,
         )
