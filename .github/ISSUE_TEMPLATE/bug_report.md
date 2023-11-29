@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: Bug Report
 about: Tell us about the data bug or broken query you are seeing
 title: "[BUG] Query data quality issue"
 labels: 'topic: bug'
