@@ -28,7 +28,7 @@ pip install -r requirements.txt
 |---|---|---|
 | `pull_from_dune.py` | updates/adds queries to your repo based on ids in `queries.yml` | `python scripts/pull_from_dune.py` |
 | `push_to_dune.py` | updates queries to Dune based on files in your `/queries` folder | `python scripts/push_to_dune.py` |
-| `preview_query.py` | gives you the first 20 rows of results by running a query from your `/queries` folder. Specify the id. | `python scripts/preview_query.py 3237723` |
+| `preview_query.py` | gives you the first 20 rows of results by running a query from your `/queries` folder. Specify the id. | `python scripts/preview_query.py 2615782` |
 
 ---
 
