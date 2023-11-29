@@ -2,7 +2,7 @@
 -- query name: Weekly DEX Aggregator volume
 -- query link: https://dune.com/queries/3237742
 
-
+--small change
 SELECT
   project,
   DATE_TRUNC('week', block_time),
