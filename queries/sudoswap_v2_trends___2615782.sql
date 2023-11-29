@@ -2,12 +2,10 @@
 -- query name: Sudoswap V2 Trends
 -- query link: https://dune.com/queries/2615782
 
-
 SELECT
 date_trunc('week', block_time) as week 
-, {{column type}} as col
+, pool_type as col
 , count(*) as trades
---get traders later 
 , sum(amount_usd) as usd_volume
 , count(distinct tx_from) as traders
 , sum(protocol_fee_amount_usd + trade_fee_amount_usd + royalty_fee_amount_usd) as all_fees
