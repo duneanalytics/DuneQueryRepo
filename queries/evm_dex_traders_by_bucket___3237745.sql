@@ -35,4 +35,9 @@ end as trader_bucket
 , count(*)
 FROM all_traders
 WHERE week >= NOW() - INTERVAL '365' day
+group by 1,2e >= 1e6 then '$1m+'
+end as trader_bucket
+, count(*)
+FROM all_traders
+WHERE week >= NOW() - INTERVAL '365' day
 group by 1,2

@@ -13,4 +13,9 @@ WHERE
  block_time > NOW() - INTERVAL '365' day
 GROUP BY
   1,
+  2, Now()) -- Add this line to see stats from current week */
+WHERE
+ block_time > NOW() - INTERVAL '365' day
+GROUP BY
+  1,
   2

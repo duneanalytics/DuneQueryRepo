@@ -40,4 +40,9 @@ FROM
 GROUP BY
   2
 ORDER BY
+  3 DESC NULLS FIRSTme AS seven
+  LEFT JOIN one_day_volume AS one ON seven."Project" = one."Project"
+GROUP BY
+  2
+ORDER BY
   3 DESC NULLS FIRST

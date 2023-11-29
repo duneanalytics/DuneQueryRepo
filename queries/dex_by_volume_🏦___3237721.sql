@@ -2,7 +2,6 @@
 -- query name: DEX by volume 🏦
 -- query link: https://dune.com/queries/3237721
 
-
 WITH
   seven_day_volume AS (
     SELECT
@@ -37,6 +36,12 @@ SELECT
 FROM
   seven_day_volume AS seven
   LEFT JOIN one_day_volume AS one ON seven."Project" = one."Project"
+WHERE
+  NOT seven.usd_volume IS NULL
+GROUP BY
+  2
+ORDER BY
+  3 DESC NULLS FIRST ON seven."Project" = one."Project"
 WHERE
   NOT seven.usd_volume IS NULL
 GROUP BY
