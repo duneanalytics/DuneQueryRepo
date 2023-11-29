@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 🔒: Queries that are already private will be kept private after updating. 
 
-➕: If you want to add a query, add it in dune app first then pull the query id (from URL `dune.com/queries/{id}/other_stuff`) into `queries.yml`
+➕: If you want to add a query, add it in Dune app first then pull the query id (from URL `dune.com/queries/{id}/other_stuff`) into `queries.yml`
 
 🛑: If you accidently merge a PR or push a commit that messes up your query in Dune, you can roll back any changes using [query version history](https://dune.com/docs/app/query-editor/version-history).
 
