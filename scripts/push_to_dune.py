@@ -22,11 +22,15 @@ query_ids = [id for id in data['query_ids']]
 
 for id in query_ids:
     query = dune.get_query(id)
-    print('updating query {}, {}'.format(query.base.query_id, query.base.name))
+    print('PROCESSING: query {}, {}'.format(query.base.query_id, query.base.name))
 
-    # Check if file exists
-    file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', f'query_{query.base.query_id}.sql')
-    if os.path.exists(file_path):
+    # Check if query file exists in /queries folder
+    queries_path = os.path.join(os.path.dirname(__file__), '..', 'queries')
+    files = os.listdir(queries_path)
+    found_files = [file for file in files if str(id) == file.split('___')[-1].split('.')[0]]
+    
+    if len(found_files) != 0:
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', found_files[0])
         # Read the content of the file
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read()
@@ -37,6 +41,7 @@ for id in query_ids:
             # All parameters below are optional
             query_sql=text,
         )
+        print('SUCCESS: updated query {} to dune'.format(query.base.query_id))
         
     else:
-        print('file not found, query_{}.sql'.format(query.base.query_id))
+        print('ERROR: file not found, query id {}'.format(query.base.query_id))
