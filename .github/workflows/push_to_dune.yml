@@ -29,4 +29,5 @@ jobs:
       - name: Update all queries from Dune, by overwriting queries with repo query text
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+          DUNE_API_BASE_URL: ${{ secrets.DUNE_API_BASE_URL }}
         run: python -u scripts/push_to_dune.py
