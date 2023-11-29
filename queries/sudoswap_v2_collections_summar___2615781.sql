@@ -4,7 +4,7 @@
 
 
 WITH 
-    pairs_created as (
+    pairs_created as ( 
         SELECT 
         *
         FROM query_2615780

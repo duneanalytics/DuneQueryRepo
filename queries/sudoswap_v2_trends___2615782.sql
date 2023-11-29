@@ -5,7 +5,7 @@
 
 SELECT
 date_trunc('week', block_time) as week 
-, pool_type as col
+, pool_type as col 
 , count(*) as trades
 , sum(amount_usd) as usd_volume
 , count(distinct tx_from) as traders
