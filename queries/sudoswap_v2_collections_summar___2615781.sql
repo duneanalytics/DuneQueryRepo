@@ -209,12 +209,15 @@ SELECT
     , COALESCE(trade.nfts_traded, cast(0 as uint256)) as nfts_traded
     , COALESCE(trade.trade_fee_amount_usd, 0) as trade_fee_amount_usd
     , COALESCE(trade.protocol_fee_amount_usd, 0) as protocol_fee_amount_usd
+    , cast(COALESCE(last_7_days_fees,0)*52 as double)/cast(spot.amount_usd*COALESCE(cast(nfts_721 as int),cast(nfts_1155 as int)) + eth_liq*p.price as double) as apy
     , '||' as split_2
     , nfts_721
     , nfts_1155
     , erc20_balances
     , eth_liq
+    , cast(spot.amount_usd*COALESCE(cast(nfts_721 as int),cast(nfts_1155 as int)) + eth_liq*p.price as double) as usd_liquidity
 FROM all_collections_cleaned acc
 LEFT JOIN trading_totals trade ON trade.nft_contract_address = acc.nft_contract_address
 LEFT JOIN last_price spot ON spot.nft_contract_address = acc.nft_contract_address
+LEFT JOIN prices.usd_latest p ON p.blockchain = 'ethereum' and symbol = 'WETH'
 ORDER BY last_7_days DESC
