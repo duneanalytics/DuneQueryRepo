@@ -48,9 +48,12 @@ for id in query_ids:
         
         if '-- already part of a query repo' in query.sql:
             print('WARNING!!! This query is already part of a query repo')
-
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.write(f'-- WARNING: this query may be part of multiple repos\n{query.sql}')
+        else:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.write(f'-- already part of a query repo\n-- query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
         print('CREATE: new query file: {}'.format(new_file))
-        with open(file_path, 'w', encoding='utf-8') as file:
-            file.write(f'-- already part of a query repo\n-- query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
+
             
 
