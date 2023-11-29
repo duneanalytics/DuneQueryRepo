@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 🟧: Make sure to leave in the comment `-- already part of a query repo` at the top of your file. This will hopefully help prevent others from using it in more than one repo.
 
-🔒: Queries that are already private will be kept private after updating. 
+🔒: Queries must be owned by the team the API key was created under - otherwise you won't be able to update them from the repo.
 
 ➕: If you want to add a query, add it in Dune app first then pull the query id (from URL `dune.com/queries/{id}/other_stuff`) into `queries.yml`
 

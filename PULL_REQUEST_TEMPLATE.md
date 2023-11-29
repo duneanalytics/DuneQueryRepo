@@ -3,7 +3,7 @@ If so, link that issue(s) here.
 
 **Fill out the following table describing your edits:**
 
-| Original Query | New Query | Change | Reasoning |
+| Original Query | Updated Query | Change | Reasoning |
 |---|---|---|---|
 | [3237745](https://dune.com/queries/3237745) | [3237938](https://dune.com/queries/3238935) | Remove sandwich traders using dex.sandwiches | We should only care about traders who are not doing MEV |
 | [3237723](https://dune.com/queries/3237745) | ... | ... | ... |
