@@ -10,15 +10,15 @@ A template for creating repos to manage your Dune queries. The main flow I've cr
 
 3. Copy and paste that list into the `queries.yml` file (or any list of query ids, doesn't have to be linked to a dashboard). 
 
-4. Then, run `pull_from_dune.py` to bring in all queries into `/query_{id}.sql` files within the `/queries` folder. Directions are below.
+4. Then, run `pull_from_dune.py` to bring in all queries into `/query_{id}.sql` files within the `/queries` folder. Directions to setup and run this script are below.
 
-5. Make any changes you need to directly in the repo. Any time you push a commit `push_to_dune.py` will run and save your changes into Dune directly.
+5. Make any changes you need to directly in the repo. Any time you push a commit to MAIN branch, `push_to_dune.py` will save your changes into Dune directly.
 
 💡: We use the [Dune CRUD API](https://dune.com/docs/api/api-reference/edit-queries/) to manage queries - this does not change how your queries behave in app.
 
 ---
 
-### Scripts
+### Query Management Scripts
 
 You'll need python installed to run the script commands. Install the required packages first:
 
@@ -31,6 +31,8 @@ pip install -r requirements.txt
 | `pull_from_dune.py` | updates/adds queries to your repo based on ids in `queries.yml` | `python scripts/pull_from_dune.py` |
 | `push_to_dune.py` | updates queries to Dune based on files in your `/queries` folder | `python scripts/push_to_dune.py` |
 | `preview_query.py` | gives you the first 20 rows of results by running a query from your `/queries` folder. Specify the id. | `python scripts/preview_query.py 3237723` |
+
+---
 
 ### For Contributors
 
