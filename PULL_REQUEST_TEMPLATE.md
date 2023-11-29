@@ -1,4 +1,7 @@
-Fill out the following table:
+**Is this linked to an existing issue**
+If so, link that issue(s) here.
+
+**Fill out the following table describing your edits:**
 
 | Original Query | New Query | Change | Reasoning |
 |---|---|---|---|
