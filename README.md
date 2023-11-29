@@ -12,7 +12,7 @@ A template for creating repos to manage your Dune queries. The main flow I've cr
 
 4. Then, run `pull_from_dune.py` to bring in all queries into `/query_{id}.sql` files within the `/queries` folder. Directions are below.
 
-5. Make any changes you need to directly in the repo. Any time you push a commit `push_to_dune.py` will run and save your changes into Dune directly.
+5. Make any changes you need to directly in the repo. Any time you push a commit to MAIN branch, `push_to_dune.py` will save your changes into Dune directly.
 
 💡: We use the [Dune CRUD API](https://dune.com/docs/api/api-reference/edit-queries/) to manage queries - this does not change how your queries behave in app.
 
