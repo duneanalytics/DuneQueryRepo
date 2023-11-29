@@ -18,6 +18,7 @@ with
                 group by 1,2,3
             )
         WHERE amount_usd is not null
+        and tx_from NOT IN (SELECT distinct tx_from FROM dex.sandwiches) --remove sandwich volume
         group by 1,2
     )
     
