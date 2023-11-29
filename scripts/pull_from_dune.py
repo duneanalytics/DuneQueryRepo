@@ -46,6 +46,9 @@ for id in query_ids:
         file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', new_file)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         
+        if '-- already part of a query repo' in query.sql:
+            print('WARNING!!! This query is already part of a query repo')
+
         print('CREATE: new query file: {}'.format(new_file))
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(f'-- already part of a query repo\n-- query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')

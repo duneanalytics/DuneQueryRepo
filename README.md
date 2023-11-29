@@ -16,6 +16,8 @@ A template for creating repos to manage your Dune queries (using the [Dune CRUD 
 
 💡: Names of queries are pulled into the file name the first time `pull_from_dune.py` is run. Changing the file name in app or in folder will not affect each other (they aren't synced). **Make sure you leave the `___id.sql` at the end of the file, otherwise the scripts will break!**
 
+🟧: Make sure to leave in the comment `-- already part of a query repo` at the top of your file. This will help make sure repo comments don't get duplicated, and also save you some headache in the case someone else from your team decides to include the query in another repo.
+
 🛑: If you accidently merge a PR or push a commit that messes up your query in Dune, you can roll back any changes using [query version history](https://dune.com/docs/app/query-editor/version-history).
 
 ---
