@@ -16,6 +16,8 @@ A template for creating repos to manage your Dune queries. The main flow I've cr
 
 💡: We use the [Dune CRUD API](https://dune.com/docs/api/api-reference/edit-queries/) to manage queries - this does not change how your queries behave in app.
 
+🛑: If you accidently merge a PR or push a commit that messes up your query in Dune, you can roll back any changes using [query version history](https://dune.com/docs/app/query-editor/version-history).
+
 ---
 
 ### Query Management Scripts
