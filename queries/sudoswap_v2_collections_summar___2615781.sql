@@ -2,7 +2,6 @@
 -- query name: Sudoswap V2 Collections Summary
 -- query link: https://dune.com/queries/2615781
 
--- hello dune
 
 WITH 
     pairs_created as (
