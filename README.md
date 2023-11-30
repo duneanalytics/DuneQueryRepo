@@ -18,7 +18,7 @@ A template for creating repos to manage your Dune queries (using the [Dune CRUD 
 
 ### Query Management Scripts
 
-You'll need [python and pip installed](https://www.anaconda.com/download) to run the script commands. Install the required packages first:
+You'll need python and pip installed to run the script commands. If you don't have a package manager set up, then use either [conda]((https://www.anaconda.com/download) or [poetry](https://python-poetry.org/) . Then install the required packages:
 
 ```
 pip install -r requirements.txt
