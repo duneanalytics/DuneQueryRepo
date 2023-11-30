@@ -14,7 +14,8 @@ load_dotenv(dotenv_path)
 dune = DuneClient.from_env()
 
 # Read the queries.yml file
-with open('queries.yml', 'r', encoding='utf-8') as file:
+queries_yml = os.path.join(os.path.dirname(__file__), '..', 'queries', 'queries.yml')
+with open(queries_yml, 'r', encoding='utf-8') as file:
     data = yaml.safe_load(file)
 
 # Extract the query_ids from the data
