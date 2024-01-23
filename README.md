@@ -1,6 +1,6 @@
 # Dune Query Repo
 
-A template for creating repos to manage your Dune queries (using the [Dune CRUD API](https://dune.com/docs/api/api-reference/edit-queries/)). The main flow I've created this template for is to turn any dashboard you own into a repository of queries. But you can extend it however you want.
+A template for creating repos to manage your Dune queries (using the [Dune CRUD API](https://dune.mintlify.app/api-reference/crud/endpoint/create). The main flow I've created this template for is to turn any dashboard you own into a repository of queries. But you can extend it however you want.
 
 ### Setup Your Repo
 
