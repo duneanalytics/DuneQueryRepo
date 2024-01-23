@@ -24,9 +24,9 @@ if len(found_files) != 0:
     with open(query_file, 'r', encoding='utf-8') as file:
         query_text = file.read()
 
-    print(query_text + '\nlimit 20')
+    print('select * from (\n' + query_text + '\n) limit 20')
 
-    results = dune.run_sql(query_text + '\nlimit 20')
+    results = dune.run_sql('select * from (\n' + query_text + '\n) limit 20')
     # print(results.result.rows)
     results = pd.DataFrame(data=results.result.rows)
     print('\n')
