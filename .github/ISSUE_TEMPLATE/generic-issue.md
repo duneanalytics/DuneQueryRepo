@@ -1,5 +1,5 @@
 ---
-name: Generic Issue
+name: Generic Question
 about: Tell us about your question
 title: "[GENERIC] Question"
 labels: 'question'
