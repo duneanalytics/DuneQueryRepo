@@ -4,7 +4,7 @@ A template for creating repos to [manage your Dune queries](https://dune.mintlif
 
 ### Setup Your Repo
 
-1. Generate an API key from your Dune account and put that in both your `.env` file and [github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) (name it `DUNE_API_KEY`). You can create a key under your Dune team settings. Add `https://api.dune.com/api` into the action secrets under `DUNE_API_BASE_URL` too. *The api key must be from a plus plan for this repo to work.*
+1. Generate an API key from your Dune account and put that in both your `.env` file and [github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) (name it `DUNE_API_KEY`). You can create a key under your Dune team settings. *The api key must be from a plus plan for this repo to work.*
 
 2. Type your intended query ids into the `queries.yml` file. The id can be found from the link `https://dune.com/queries/<query_id>/...`. If you're creating this for a dashboard, go to the dashboard you want to create a repo and click on the "github" button in the top right of your dashboard to see the query ids.
 
