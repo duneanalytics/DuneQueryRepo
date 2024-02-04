@@ -22,29 +22,25 @@ with open(queries_yml, 'r', encoding='utf-8') as file:
 query_ids = [id for id in data['query_ids']]
 
 for id in query_ids:
-    try:
-        query = dune.get_query(id)
-        print('PROCESSING: query {}, {}'.format(query.base.query_id, query.base.name))
+    query = dune.get_query(id)
+    print('PROCESSING: query {}, {}'.format(query.base.query_id, query.base.name))
 
-        # Check if query file exists in /queries folder
-        queries_path = os.path.join(os.path.dirname(__file__), '..', 'queries')
-        files = os.listdir(queries_path)
-        found_files = [file for file in files if str(id) == file.split('___')[-1].split('.')[0]]
-        
-        if len(found_files) != 0:
-            file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', found_files[0])
-            # Read the content of the file
-            with open(file_path, 'r', encoding='utf-8') as file:
-                text = file.read()
+    # Check if query file exists in /queries folder
+    queries_path = os.path.join(os.path.dirname(__file__), '..', 'queries')
+    files = os.listdir(queries_path)
+    found_files = [file for file in files if str(id) == file.split('___')[-1].split('.')[0]]
+    
+    if len(found_files) != 0:
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', found_files[0])
+        # Read the content of the file
+        with open(file_path, 'r', encoding='utf-8') as file:
+            text = file.read()
 
-                # Update existing file
-                dune.update_query(
-                    query.base.query_id, 
-                    query_sql=text,
-                )
-                print('SUCCESS: updated query {} to dune'.format(query.base.query_id))
-        else:
-            print('ERROR: file not found, query id {}'.format(query.base.query_id))
-    except Exception as e:
-        print('ERROR: {}'.format(str(e))) #likely API permission errors
-        print('Most errors are because your API key was not generated under the context of the query owner.')
+            # Update existing file
+            dune.update_query(
+                query.base.query_id, 
+                query_sql=text,
+            )
+            print('SUCCESS: updated query {} to dune'.format(query.base.query_id))
+    else:
+        print('ERROR: file not found, query id {}'.format(query.base.query_id))
