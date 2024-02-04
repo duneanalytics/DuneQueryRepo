@@ -8,7 +8,7 @@ A template for creating repos to [manage your Dune queries](https://dune.mintlif
 
 2. Then, go to the dashboard you want to create a repo for (must be owned by you/your team). Click on the "github" button in the top right of your dashboard to see the query ids.
 
-3. Copy and paste that list into the `queries.yml` file inside the `/queries` folder. You can paste any list of query ids, doesn't have to be linked to a dashboard.
+3. Copy and paste that list into the `queries.yml` file. You can paste any list of query ids, it doesn't have to be linked to a dashboard.
 
 4. Then, run `pull_from_dune.py` to bring in all queries into `/query_{id}.sql` files within the `/queries` folder. Directions to setup and run this script are below.
 

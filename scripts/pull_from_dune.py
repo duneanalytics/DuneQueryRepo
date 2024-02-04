@@ -14,7 +14,7 @@ load_dotenv(dotenv_path)
 dune = DuneClient.from_env()
 
 # Read the queries.yml file
-queries_yml = os.path.join(os.path.dirname(__file__), '..', 'queries', 'queries.yml')
+queries_yml = os.path.join(os.path.dirname(__file__), '..', 'queries.yml')
 with open(queries_yml, 'r', encoding='utf-8') as file:
     data = yaml.safe_load(file)
 
