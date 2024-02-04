@@ -21,13 +21,10 @@ for file in files:
         continue
     file_name = file.split(".")[0].lower().replace(' ', '_')
     with open(os.path.join(uploads_path, file), 'r') as file:
-        try:
-            table = dune.upload_csv(
-                data=str(file.read()),
-                table_name=file_name,
-                is_private=False
-            )
-            print(f'uploaded table "{file_name}"')
-        except Exception as e:
-            print(e)
+        table = dune.upload_csv(
+            data=str(file.read()),
+            table_name=file_name,
+            is_private=False
+        )
+        print(f'uploaded table "{file_name}"')
 
