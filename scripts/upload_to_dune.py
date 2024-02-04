@@ -16,7 +16,7 @@ dune = DuneClient.from_env()
 uploads_path = os.path.join(os.path.dirname(__file__), '..', 'uploads')
 files = os.listdir(uploads_path)
 
-if len(files) != 0:
+if len(files) == 0:
     exit() 
     
 for file in files:
