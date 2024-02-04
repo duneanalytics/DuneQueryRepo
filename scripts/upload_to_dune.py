@@ -29,5 +29,5 @@ for file in files:
             )
             print(f'uploaded table "{file_name}"')
         except Exception as e:
-            print(f"An error occurred while uploading the CSV: {str(e)}")
+            print(e)
 
