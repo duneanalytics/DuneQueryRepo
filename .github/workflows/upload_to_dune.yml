@@ -1,0 +1,33 @@
+name: Upload CSVs to Dune on Commit
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'queries/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Log directory structure
+        run: |
+          pwd
+          ls -R
+    
+      - name: pip requirements
+        run: pip install -r requirements.txt
+
+      - name: Update all queries from Dune, by overwriting queries with repo query text
+        env:
+          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+          DUNE_API_BASE_URL: ${{ secrets.DUNE_API_BASE_URL }}
+        run: python -u scripts/upload_to_dune.py
