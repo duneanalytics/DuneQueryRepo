@@ -2,7 +2,7 @@
 name: Generic Issue
 about: Tell us about your question
 title: "[GENERIC] Question"
-labels: 'topic: generic'
+labels: 'question'
 assignees: ''
 
 ---

@@ -53,8 +53,8 @@ pip install -r requirements.txt
 
 I've set up four types of issues right now:
 - `bugs`: This is for data quality issues like miscalculations or broken queries.
-- `chart_improvements`: This is for suggesting improvements to the visualizations.
-- `query_improvements`: This is for suggesting improvements to the query itself, such as adding an extra column or table that enhances the results.
-- `generic`: This is a catch all for other questions or suggestions you may have about the dashboard.
+- `chart improvements`: This is for suggesting improvements to the visualizations.
+- `query improvements`: This is for suggesting improvements to the query itself, such as adding an extra column or table that enhances the results.
+- `generic questions`: This is a catch all for other questions or suggestions you may have about the dashboard.
 
 If you want to contribute, either start an issue or go directly into making a PR (using the same labels as above). Once the PR is merged, the queries will get updated in the frontend.

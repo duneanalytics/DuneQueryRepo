@@ -2,7 +2,7 @@
 name: Chart Improvment
 about: Suggest an idea for improving a chart
 title: "[CHART] Suggestion for improving a chart"
-labels: 'topic: chart_improvements'
+labels: 'enhancements'
 assignees: ''
 
 ---

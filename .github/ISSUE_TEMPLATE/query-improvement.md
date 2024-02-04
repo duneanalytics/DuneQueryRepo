@@ -2,7 +2,7 @@
 name: Query Improvement
 about: Suggest an idea for improving a query
 title: "[QUERY] Suggestion for improving a chart"
-labels: 'topic: query_improvements'
+labels: 'enhancement'
 assignees: ''
 
 ---
