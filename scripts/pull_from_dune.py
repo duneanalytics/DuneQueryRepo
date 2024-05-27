@@ -43,7 +43,7 @@ for id in query_ids:
                 file.write(f'-- part of a query repo\n-- query name: {query.base.name}\n-- query link: https://dune.com/queries/{query.base.query_id}\n\n\n{query.sql}')
     else:
         # Create new file and directories if they don't exist
-        new_file = f'{query.base.name.replace(" ", "_").lower()[:30]}___{query.base.query_id}.sql'
+        new_file = f'{query.base.name.lower()[:30].strip().replace(" ", "_")}___{query.base.query_id}.sql'
         file_path = os.path.join(os.path.dirname(__file__), '..', 'queries', new_file)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         
