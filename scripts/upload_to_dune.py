@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import sys
 import codecs
 import os
+from typing import cast
 
 # Set the default encoding to UTF-8
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
@@ -11,7 +12,7 @@ sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
 load_dotenv(dotenv_path)
 
-dune = DuneClient.from_env()
+dune = cast(DuneClient, DuneClient.from_env())
 
 uploads_path = os.path.join(os.path.dirname(__file__), '..', 'uploads')
 files = os.listdir(uploads_path)
