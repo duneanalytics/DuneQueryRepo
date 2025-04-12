@@ -27,13 +27,17 @@ if len(found_files) != 0:
     print('select * from (\n' + query_text + '\n) limit 20')
 
     results = dune.run_sql('select * from (\n' + query_text + '\n) limit 20')
-    # print(results.result.rows)
-    results = pd.DataFrame(data=results.result.rows)
-    print('\n')
-    print(results)
-    print('\n')
-    print(results.describe())
-    print('\n')
-    print(results.info())
+    if results.result is None:
+        print("No results found")
+        results_df = pd.DataFrame()
+    else:
+        # print(results.result.rows)
+        results = pd.DataFrame(data=results.result.rows)
+        print("\n")
+        print(results)
+        print("\n")
+        print(results.describe())
+        print("\n")
+        print(results.info())
 else:
     print('query id file not found, try again')
