@@ -12,7 +12,7 @@ A template for creating repos to [manage your Dune queries](https://dune.mintlif
 
 ### Updating Queries or CSV Tables
 
-1. Make any changes you need to directly in the repo. Any time you push a commit to MAIN branch, `push_to_dune.py` will save your changes into Dune directly. You can run this manually too if you want.
+1. Make any changes you need to directly in the repo. Any time you push a commit to MAIN branch, `push_to_dune.py` updates only the changed `.sql` queries in Dune. You can run this manually too if you want (set `FULL_SYNC=true` to force updating all queries).
 
 2. For CSVs, update the files in the `/uploads` folder. `upload_to_dune.py` will run on commit, or can be run manually. The table name in Dune will be `dune.team_name.dataset_<filename>`.
 

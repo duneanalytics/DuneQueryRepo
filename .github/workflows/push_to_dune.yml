@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       
       - uses: actions/setup-python@v4
         with:
@@ -26,7 +28,47 @@ jobs:
       - name: pip requirements
         run: pip install -r requirements.txt
 
-      - name: Update all queries from Dune, by overwriting queries with repo query text
+      - name: Detect changed SQL files
+        id: detect_queries
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZERO_SHA="0000000000000000000000000000000000000000"
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          echo "CHANGED_QUERY_FILES=" >> "$GITHUB_ENV"
+          echo "FULL_SYNC=false" >> "$GITHUB_ENV"
+
+          if [[ -z "${BEFORE}" || "${BEFORE}" == "${ZERO_SHA}" ]]; then
+            echo "Previous commit SHA is unavailable. Falling back to FULL_SYNC."
+            echo "FULL_SYNC=true" >> "$GITHUB_ENV"
+            echo "run_push=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            echo "Previous commit ${BEFORE} is not available locally. Falling back to FULL_SYNC."
+            echo "FULL_SYNC=true" >> "$GITHUB_ENV"
+            echo "run_push=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          mapfile -t changed_sql_files < <(git diff --name-only "${BEFORE}" "${AFTER}" -- queries | grep -E '^queries/.*\.sql$' || true)
+
+          if [[ ${#changed_sql_files[@]} -eq 0 ]]; then
+            echo "No changed SQL files detected. Skipping push_to_dune.py."
+            echo "run_push=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          changed_csv=$(printf '%s\n' "${changed_sql_files[@]}" | paste -sd, -)
+          echo "Detected changed SQL files: ${changed_csv}"
+          echo "CHANGED_QUERY_FILES=${changed_csv}" >> "$GITHUB_ENV"
+          echo "run_push=true" >> "$GITHUB_OUTPUT"
+
+      - name: Push changed queries to Dune
+        if: steps.detect_queries.outputs.run_push == 'true'
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
         run: python -u scripts/push_to_dune.py
