@@ -1,4 +1,0 @@
-dune-client
-pyyaml
-python-dotenv
-pandas

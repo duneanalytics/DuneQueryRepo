@@ -14,19 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
 
       - name: Log directory structure
         run: |
           pwd
           ls -R
-    
-      - name: pip requirements
-        run: pip install -r requirements.txt
+
+      - name: Install dependencies
+        run: uv sync
 
       - name: Update all queries from Dune, by overwriting queries with repo query text
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
-        run: python -u scripts/push_to_dune.py
+        run: uv run python -u scripts/push_to_dune.py
