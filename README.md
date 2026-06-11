@@ -20,18 +20,18 @@ A template for creating repos to [manage your Dune queries](https://dune.mintlif
 
 ### Query Management Scripts
 
-You'll need python and pip installed to run the script commands. If you don't have a package manager set up, then use either [conda](https://www.anaconda.com/download) or [poetry](https://python-poetry.org/) . Then install the required packages:
+You'll need [uv](https://docs.astral.sh/uv/) installed to run the script commands. uv manages the Python version and dependencies for you. Then install the required packages:
 
 ```
-pip install -r requirements.txt
+uv sync
 ```
 
 | Script | Action                                                                                                                                                    | Command |
 |---|-----------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| `pull_from_dune.py` | updates/adds queries to your repo based on ids in `queries.yml`                                                                                           | `python scripts/pull_from_dune.py` |
-| `push_to_dune.py` | updates queries to Dune based on files in your `/queries` folder                                                                                          | `python scripts/push_to_dune.py` |
-| `preview_query.py` | gives you the first 20 rows of results by running a query from your `/queries` folder. Specify the id. This uses Dune API credits | `python scripts/preview_query.py 2615782` |
-| `upload_to_dune.py` | uploads/updates any tables from your `/uploads` folder. Must be in CSV format, and under 200MB. | `python scripts/upload_to_dune.py` |
+| `pull_from_dune.py` | updates/adds queries to your repo based on ids in `queries.yml`                                                                                           | `uv run python scripts/pull_from_dune.py` |
+| `push_to_dune.py` | updates queries to Dune based on files in your `/queries` folder                                                                                          | `uv run python scripts/push_to_dune.py` |
+| `preview_query.py` | gives you the first 20 rows of results by running a query from your `/queries` folder. Specify the id. This uses Dune API credits | `uv run python scripts/preview_query.py 2615782` |
+| `upload_to_dune.py` | uploads/updates any tables from your `/uploads` folder. Must be in CSV format, and under 200MB. | `uv run python scripts/upload_to_dune.py` |
 
 ---
 
