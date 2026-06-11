@@ -23,7 +23,7 @@ jobs:
           ls -R
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       - name: Update all queries from Dune, by overwriting queries with repo query text
         env:
