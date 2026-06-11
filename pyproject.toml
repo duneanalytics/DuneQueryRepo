@@ -11,3 +11,4 @@ dependencies = [
 
 [tool.uv]
 exclude-newer = "3 days"
+no-build = true
