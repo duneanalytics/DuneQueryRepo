@@ -1,12 +1,12 @@
 [project]
 name = "dunequeryrepo"
 version = "0.1.0"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = [
-    "dune-client>=1.11.1",
-    "pandas>=3.0.3",
-    "python-dotenv>=1.2.2",
-    "pyyaml>=6.0.3",
+    "dune-client",
+    "pandas",
+    "python-dotenv",
+    "pyyaml",
 ]
 
 [tool.uv]
